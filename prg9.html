@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        input[type=text]{
+            border-radius: 4px;
+            background-color: yellow;
+            border:2px solid green;
+        }
+        label{
+            display: block;
+            margin: 10px;
+        }
+        h2{
+            text-transform: uppercase;
+        }
+    </style>
+    <script>
+        function add(){
+            document.getElementById("res").value=parseInt(document.getElementById("fn").value)+parseInt(document.getElementById("sn").value);
+        }
+        function sub(){
+            document.getElementById("res").value=parseInt(document.getElementById("fn").value)-parseInt(document.getElementById("sn").value);
+        }
+        function mul(){
+            document.getElementById("res").value=parseInt(document.getElementById("fn").value)*parseInt(document.getElementById("sn").value);
+        }
+        function div(){
+            if(sn != null){
+            document.getElementById("res").value=parseInt(document.getElementById("fn").value)/parseInt(document.getElementById("sn").value);
+        }
+        else
+        {
+            alert("Any number cannot be divided by zero");
+        }
+        }
+    </script>
+</head>
+<body>
+    <center>
+    <h2>A Simple Calculator</h2>
+    <form action="">
+        <label for="fn">First  number:<input type="text"name="fn"id="fn" required></label>
+        <label for="sn">Second number:<input type="text"name="sn"id="sn" required></label>
+        <label for="res">Result:<input type="text"name="res"id="res" disabled></label>
+        <input type="button" value="Add"onclick="add();">
+        <input type="button" value="Sub"onclick="sub();">
+        <input type="button" value="Mul"onclick="mul();">
+        <input type="button" value="Div"onclick="div();">
+        <input type="reset" value="clear">
+    </form>
+    </center>
+</body>
+</html>
