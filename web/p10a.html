@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(function (){
+            t=$("textarea").attr('maxlength')
+            $("span").text(t);
+
+            $("textarea").keyup(function (){
+                 
+                nc=$(this).val().length;
+                $("#rc").text(t-nc);
+            });
+        });
+    </script>
+    <title>p10a</title>
+</head>
+<body>
+    <h3>You can enter maximum of <span>0</span> characters</h3>
+ <textarea id="text" cols="30" rows="10" maxlength="30"></textarea>
+ <p>Remaining <span id="rc">20</span> characters</p>
+    
+</body>
+</html>
